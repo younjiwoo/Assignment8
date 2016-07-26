@@ -1,0 +1,36 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Responsive Web -->
+<title>Assignment 8</title>
+<!-- [if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+<![end if]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script> <!-- j.query library -->
+<link href="#" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <button id="btn1">.click() method</button>
+    <button id="btn2">.bind() method</button>
+    <button id="btn3">.on() method</button>
+    
+    <script>
+    $('#btn1').click(function() {
+        alert('Button has been clicked.'); 
+        
+    });
+    $('#btn2').bind('click', function() {
+        alert('Button has been clicked.');
+    });
+    $('#btn3').on('click', function() {
+        alert('Button has been clicked.'); 
+    });
+    
+    </script>
+</body>
+
+</html>
