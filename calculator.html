@@ -32,14 +32,16 @@
                             'border': '3px solid #999'});
     
     // step 3 : Reference the “bubble capture” code from assignment 6. Rewrite this code so that it uses jQuery events and makes use of jQuery DOM manipulation techniques to set the display based on button selections made.
-
-        $( '#container input' ).click(function() {
-            var clickedKey = $( this ).val();
-            var result = $( '#result' ).val( clickedKey );
+        
+        $( '#container input' ).click(function() { // if buttons hear click
+            var clickedKey = $( this ).val(); // button's value = var clickedKey
+            var result = $( '#result' ).val( clickedKey ); // display window has clickedKey's value = var result
         });
-    
-    
+        function calculate() {
+            $( 'result' ).val() = eval( $( 'result' ).val() );
+        }
     }); // end of document.ready function
+    
     
     
     
