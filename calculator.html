@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Assignment 8 - Calculator III</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script> <!-- j.query library -->
+<script type="text/javascript">
+    // step 1
+    $(function() {
+    // step 2
+        $( '#container input' ).width(50).height(55).css({'margin': '5px', 
+                                                          'font-size': '1.7em',
+                                                          'font-weight': '500',
+                                                          'border-radius': '3em'});
+        $( '#zero, #one, #two, #three, #four, #five, #six, #seven, #eight, #nine' )
+            .css({'background-color': 'gold',
+                  'border': '3px solid lightgrey',
+                  'color': '#fff'});
+        $( '#period, #divide, #multiply, #subtract, #add' ).css({'background-color': 'skyblue',
+                                                                 'border': '3px solid lightgrey',
+                                                                 'color': '#fff'});
+        $( '#equal' ).css({ 'background-color': 'lightsalmon',
+                            'border': '3px solid lightgrey',
+                            'color': '#fff'});
+        $( '#result' ).width(285)
+                      .css({'background-color': '#ccc',
+                            'margin-bottom': '.8em',
+                            'border-radius': '.3em',
+                            'font-size': '1.5em',
+                            'padding': '.5em',
+                            'color': '#fff',
+                            'border': '3px solid #999'});
+    
+    // step 3 : Reference the “bubble capture” code from assignment 6. Rewrite this code so that it uses jQuery events and makes use of jQuery DOM manipulation techniques to set the display based on button selections made.
+
+        $( '#container input' ).click(function() {
+            var clickedKey = $( this ).val();
+            var result = $( '#result' ).val( clickedKey );
+        });
+    
+    
+    }); // end of document.ready function
+    
+    
+    
+</script>
+</head>
+
+<body>
+	<input type="text" readonly id="result">
+    <br>
+    <div id="container">
+        <input type="button" id="seven" value="7">
+        <input type="button" id="eight" value="8">
+        <input type="button" id="nine" value="9">
+        <input type="button" id="divide" value="/">
+        <br>
+        <input type="button" id="four" value="4">
+        <input type="button" id="five" value="5">
+        <input type="button" id="six" value="6">
+        <input type="button" id="multiply" value="*">
+        <br>
+        <input type="button" id="one" value="1">
+        <input type="button" id="two" value="2">
+        <input type="button" id="three" value="3">
+        <input type="button" id="subtract" value="-">
+        <br>
+        <input type="button" id="zero" value="0">
+        <input type="button" id="period" value=".">
+        <input type="button" id="add" value="+">
+        <input type="button" id="equal" value="=">
+    </div>
+    
+</body>
+</html>

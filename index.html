@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Responsive Web -->
-<title>Assignment 8</title>
+<title>Assignment 8 - Part 1</title>
 <!-- [if lt IE 9]>
     <script src="js/html5shiv.min.js"></script>
 <![end if]-->
@@ -21,8 +21,8 @@
     <button id="btn3">.on() method</button><br>
     <button id="btn4">single .on()</button>
     <button id="btn5">single .on()</button><br>
-    <div id="div1">div 1</div>
-    <div id="div2">div 2</div>
+    <div id="div1">400 x 400</div>
+    <div id="div2">200 x 200</div>
     <span id="span1"><h3></h3></span>
     <h1 id="googleLink"><a href="https://www.google.com" target="_blank">Link to Google</a></h1>
     <div id="div3"></div>
@@ -37,30 +37,36 @@
     
     
 <script>
+    // step 1
     $( '#btn1' ).click(function() {
         alert('The button has been clicked.'); 
     });
+    // step 2
     $( '#btn2' ).bind('click', function() {
         alert('The button has been clicked.');
     });
+    // step 3
     $( '#btn3' ).on('click', function() {
         alert('The button has been clicked.'); 
     });
+    // step 4
     $( '#btn4, #btn5' ).on('click', function() {
         alert('The button has been clicked.'); 
     });
+    // step 5
     $(function() {
         $( '#div1' ).width(400).height(400);
-        $('#div1').on('click', function() {
+        $( '#div1' ).on('click', function() {
             alert('The div has been clicked.');
         });
-//        $( '#div1' ).on('mouseenter', function() {
-//            alert('The mouse entered the div.');      
-//        });
-//        $( '#div1' ).on('mouseleave', function() {
-//            alert('The mouse left the div.');      
-//        });
+        $( '#div1' ).on('mouseenter', function() {
+            alert('The mouse entered the div.');      
+        });
+        $( '#div1' ).on('mouseleave', function() {
+            alert('The mouse left the div.');      
+        });
     });
+    // step 6
     $(function() {
         $( '#div2' ).width(200).height(200);
         $( '#div2' ).on('click', function() {
@@ -73,25 +79,39 @@
             $('#span1 h3').text('The mouse left the div.');
         });
     });
+    // step 7
     $( 'h1 a' ).on('click', function(event) {
         event.preventDefault();
         $( this ).css('color', 'red');
         alert(event.target.tagName);
     });
+    // step 8
     $( window ).resize(function() {
         $( '#div3' ).prepend( '<p>' + $( window ).width() + '</p>');
     });
+    // step 9
     $( '#text' ).focusin('click', function() {
         $( this ).css('background-color', 'lightgrey'); 
     });
     $( '#text' ).focusout('click', function() {
         $( this ).css('background-color', 'white'); 
     });
+    // step 10
     $( '#submit' ).on('click', function() {
-        if ( $( '#name' ).val() ) { // is equal to $( '#name' ).val() === ''
-//            $( '#name' ).css('border-color', 'red');
+        if ( $( '#name' ).val() === '' && $( '#email' ).val() === '' ) {
+            $( '#name, #email' ).css('border-color', 'red');
             alert('Both fields are required.');
-        } 
+        } else if ( $( '#name' ).val() === '' ) {
+            $( '#name' ).css('border-color', 'red');
+            $( '#email' ).css('border-color', 'green');
+            alert('You have the name field empty.');
+        } else if ( $( '#email' ).val() === '' ) {
+            $( '#email' ).css('border-color', 'red');
+            $( '#name' ).css('border-color', 'green');
+            alert('You have the email field empty.');
+        } else {
+            $( '#name, #email' ).css('border-color', 'green');
+        }
     });
     
 
