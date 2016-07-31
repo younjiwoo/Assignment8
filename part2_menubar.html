@@ -2,30 +2,30 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Responsive Web -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Menu Bar</title>
 <!-- [if lt IE 9]>
     <script src="js/html5shiv.min.js"></script>
 <![end if]-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script> <!-- j.query library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script><!-- j.query library -->
 <script>
 $(function() { 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    var tabs = $( '.nav_ul li a' ); // tabs = four <a> tags
+    tabs.on('click', function(event) { 
+        event.preventDefault();
+        var clickedItem = $( this ); // this = a clicked <a> tag
+        if( !clickedItem.hasClass('selected') ) { // if a clicked tab doesn't have 'selected' class,
+            $( '.four-contents li').removeClass( 'selected' ); // first, remove 'selected' class from all the <li>s.
+            $( '.four-contents li[data-content=' + clickedItem.data('content') + ']').addClass('selected'); // second, Get the clicked <a> tag's value by using ".data( 'content' )"
+            tabs.removeClass( 'selected' ); // the actual tabs have to remove 'selected' class so that the red bar which indicates where you are moves.
+            clickedItem.addClass( 'selected' ); // then add 'selected' class to clickedItem variable to have the red bar
+        }
+    });
     
 });
  
 </script>
-<link href="css/style.css" type="text/css" rel="stylesheet" />
+<link href="css/menubar_style.css" type="text/css" rel="stylesheet" />
 </head>
     
 <body>
@@ -33,7 +33,7 @@ $(function() {
 	<nav>
 		<ul class="nav_ul">
 			<li><a data-content="about" class="selected" href="#0">About</a></li>
-			<li><a data-content="new" href="#0">New</a></li>
+			<li><a data-content="products" href="#0">Products</a></li>
 			<li><a data-content="gallery" href="#0">Gallery</a></li>
 			<li><a data-content="store" href="#0">Store</a></li>
 		</ul> <!-- nav_ul -->
@@ -44,8 +44,8 @@ $(function() {
 			<p>About Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum recusandae rem animi accusamus quisquam reprehenderit sed voluptates, numquam, quibusdam velit dolores repellendus tempora corrupti accusantium obcaecati voluptate totam eveniet.</p>
 		</li>
 
-		<li data-content="new">
-			<p>New Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non a voluptatibus, ex odit totam cumque nihil eos asperiores ea, labore rerum. Doloribus tenetur quae impedit adipisci, laborum dolorum eaque ratione quaerat, eos dicta consequuntur atque ex facere voluptate cupiditate incidunt.</p>
+		<li data-content="products">
+			<p>Products Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non a voluptatibus, ex odit totam cumque nihil eos asperiores ea, labore rerum. Doloribus tenetur quae impedit adipisci, laborum dolorum eaque ratione quaerat, eos dicta consequuntur atque ex facere voluptate cupiditate incidunt.</p>
 		</li>
 
 		<li data-content="gallery">

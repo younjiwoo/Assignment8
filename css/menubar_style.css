@@ -1,11 +1,4 @@
-/* -------------------------------- 
-
-Primary style
-
--------------------------------- */
 *, *::after, *::before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -25,69 +18,23 @@ a {
   text-decoration: none;
 }
 
-/* -------------------------------- 
-
-Main components 
-
--------------------------------- */
 * {
     padding: 0;
     margin: 0;
 }
-
 .container {
   position: relative;
   width: 90%;
   max-width: 960px;
   margin: 2em auto;
 }
-.container:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.container::after {
-  /* subtle gradient layer on top right - to indicate it's possible to scroll */
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 60px;
-  width: 50px;
-  z-index: 1; 
-  pointer-events: none;
-  background: -webkit-linear-gradient( right , #f8f7ee, rgba(248, 247, 238, 0));
-  background: linear-gradient(to left, #f8f7ee, rgba(248, 247, 238, 0));
-  visibility: visible;
-  opacity: 1;
-  -webkit-transition: opacity .3s 0s, visibility 0s 0s;
-  -moz-transition: opacity .3s 0s, visibility 0s 0s;
-  transition: opacity .3s 0s, visibility 0s 0s;
-}
-.no-cssgradients .container::after {
-  display: none;
-}
-.container.is-ended::after {
-  /* class added in jQuery - remove the gradient layer when it's no longer possible to scroll */
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transition: opacity .3s 0s, visibility 0s .3s;
-  -moz-transition: opacity .3s 0s, visibility 0s .3s;
-  transition: opacity .3s 0s, visibility 0s .3s;
-}
 .container nav {
   overflow: auto;
-  -webkit-overflow-scrolling: touch;
   background: #f8f7ee;
-  box-shadow: inset 0 -2px 3px rgba(203, 196, 130, 0.06);
-}
 
+}
 .nav_ul {
   width: 360px;
-}
-.nav_ul:after {
-  content: "";
-  display: table;
-  clear: both;
 }
 .nav_ul li {
   float: left;
@@ -98,53 +45,28 @@ Main components
   height: 60px;
   width: 60px;
   text-align: center;
-  font-size: 12px;
   font-size: 0.75rem;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   font-weight: 700;
   color: #c3c2b9;
   padding-top: 34px;
-}
-.no-touch .nav_ul a:hover {
-  color: #29324e;
-  background-color: rgba(233, 230, 202, 0.3);
 }
 .nav_ul a.selected {
   background-color: #ffffff !important;
   box-shadow: inset 0 2px 0 #f05451;
   color: #29324e;
 }
-.nav_ul a::before {
-  /* icons */
-  position: absolute;
-  top: 12px;
-  left: 50%;
-  margin-left: -10px;
-  display: inline-block;
-  height: 20px;
-  width: 20px;
-  background-image: url("../img/vicons.svg");
-  background-repeat: no-repeat;
-}
 .four-contents {
   background: #ffffff;
 }
 .four-contents li {
   display: none;
-  padding: 1.4em;
+  padding: 1.5em;
 }
 .four-contents li.selected {
   display: block;
-  -webkit-animation: cd-fade-in 0.5s;
-  -moz-animation: cd-fade-in 0.5s;
-  animation: cd-fade-in 0.5s;
 }
 .four-contents li p {
-  font-size: 14px;
-  font-size: 0.875rem;
-  line-height: 1.6;
-  color: #8493bf;
-  margin-bottom: 2em;
+  color: #29324e;
+
 }
 
