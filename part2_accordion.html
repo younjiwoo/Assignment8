@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accordion</title>
+<!-- [if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+<![end if]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script><!-- j.query library -->
+<script>
+     $(function() {
+        var threeBtns = document.getElementsByClassName('accordion');
+        var i;
+        for (i = 0; i < threeBtns.length; i++) {
+            threeBtns[i].onclick = function() {
+                this.classList.toggle('active');
+                this.nextElementSibling.classList.toggle('show');
+            }
+        } 
+     });
+</script>
+<link href="css/general_style.css" type="text/css" rel="stylesheet" />
+</head>
+    
+<body>
+<div id="container">
+<button class="accordion">Tab 1</button>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+    sed do eiusmod tempor incididunt ut labore et dolore magna 
+    aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+    ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<button class="accordion">Tab 2</button>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+    sed do eiusmod tempor incididunt ut labore et dolore magna 
+    aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+    ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<button class="accordion">Tab 3</button>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+    sed do eiusmod tempor incididunt ut labore et dolore magna 
+    aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+    ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+</div><!-- #container ends --> 
+</body>
+</html>
